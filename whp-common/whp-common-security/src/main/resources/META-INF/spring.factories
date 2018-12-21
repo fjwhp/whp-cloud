@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.cloud.whp.common.security.filter.TenantContextHolderFilter,\
+  com.cloud.whp.common.security.feign.WhpFeignClientConfiguration,\
+  com.cloud.whp.common.security.feign.WhpFeignTenantConfiguration,\
+  com.cloud.whp.common.security.service.WhpUserDetailsServiceImpl

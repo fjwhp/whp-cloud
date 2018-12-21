@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.cloud.whp.admin.api.feign.fallback.RemoteUserServiceFallbackImpl,\
+  com.cloud.whp.admin.api.feign.fallback.RemoteLogServiceFallbackImpl,\
+  com.cloud.whp.admin.api.feign.fallback.RemoteTokenServiceFallbackImpl,\
+  com.cloud.whp.admin.api.feign.factory.RemoteUserServiceFallbackFactory,\
+  com.cloud.whp.admin.api.feign.factory.RemoteLogServiceFallbackFactory,\
+  com.cloud.whp.admin.api.feign.factory.RemoteTokenServiceFallbackFactory

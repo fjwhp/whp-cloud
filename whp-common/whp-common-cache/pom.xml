@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cloud</groupId>
+		<artifactId>whp-common</artifactId>
+		<version>2.0.0</version>
+	</parent>
+
+	<artifactId>whp-common-cache</artifactId>
+	<packaging>jar</packaging>
+
+	<description>whpcloud 缓存工具类</description>
+
+
+	<dependencies>
+		<!--工具类核心包 要从线程中获取租户ID-->
+		<dependency>
+			<groupId>com.cloud</groupId>
+			<artifactId>whp-common-core</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<!--缓存依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+	</dependencies>
+</project>

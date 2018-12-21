@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cloud</groupId>
+		<artifactId>whp-upms</artifactId>
+		<version>2.0.0</version>
+	</parent>
+
+	<artifactId>whp-upms-biz</artifactId>
+	<packaging>jar</packaging>
+
+	<description>whp 通用用户权限管理系统业务处理模块</description>
+
+	<dependencies>
+		<!--upms api、model 模块-->
+		<dependency>
+			<groupId>com.cloud</groupId>
+			<artifactId>whp-upms-api</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<!--日志处理-->
+		<dependency>
+			<groupId>com.cloud</groupId>
+			<artifactId>whp-common-log</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<!--缓存依赖-->
+		<dependency>
+			<groupId>com.cloud</groupId>
+			<artifactId>whp-common-cache</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<!--swagger-->
+		<dependency>
+			<groupId>com.cloud</groupId>
+			<artifactId>whp-common-swagger</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<!--eureka 客户端-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<!--配置中心客户端-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<!--spring security 、oauth、jwt依赖-->
+		<dependency>
+			<groupId>com.cloud</groupId>
+			<artifactId>whp-common-security</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<!--支持动态路由配置 -->
+		<dependency>
+			<groupId>com.cloud</groupId>
+			<artifactId>whp-common-gateway</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<!--mybatis-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>${mybatis-plus.version}</version>
+		</dependency>
+		<!--数据库-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+		<!--web 模块-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<!--排除tomcat依赖-->
+				<exclusion>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+					<groupId>org.springframework.boot</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--undertow容器-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

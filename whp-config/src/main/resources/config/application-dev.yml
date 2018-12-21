@@ -1,0 +1,108 @@
+# 加解密根密码
+jasypt:
+  encryptor:
+    password: whp-cloud #根密码
+# redis 相关
+spring:
+  redis:
+    password:
+    host: 127.0.0.1
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# feign 配置
+feign:
+  hystrix:
+    enabled: true
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+  client:
+    config:
+      feignName:
+        connectTimeout: 10000
+        readTimeout: 10000
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+# hystrix If you need to use ThreadLocal bound variables in your RequestInterceptor`s
+# you will need to either set the thread isolation strategy for Hystrix to `SEMAPHORE or disable Hystrix in Feign.
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 60000
+  shareSecurityContext: true
+
+#请求处理的超时时间
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+# mybaits-plus配置
+mybatis-plus:
+  # MyBatis Mapper所对应的XML文件位置
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    # 自动刷新Mapper对应的XML文件
+    refresh: true
+    # 关闭MP3.0自带的banner
+    banner: false
+    db-config:
+      # 主键类型 0:数据库ID自增 1.未定义 2.用户输入 3 id_worker 4.uuid 5.id_worker字符串表示
+      id-type: 0
+      #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+      field-strategy: 1
+      # 默认数据库表下划线命名
+      table-underline: true
+      # 逻辑删除配置
+      # 逻辑删除全局值（1表示已删除，这也是Mybatis Plus的默认配置）
+      logic-delete-value: 1
+      # 逻辑未删除全局值（0表示未删除，这也是Mybatis Plus的默认配置）
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+
+#swagger公共信息
+swagger:
+  title: whp Swagger API
+  description: whp-cloud的Spring Cloud微服务开发脚手架
+  version: @project.version@
+  license: Powered By whp
+  licenseUrl: https://whp-cloud.com/
+  terms-of-service-url: https://whp-cloud.com/
+  contact:
+    name: whp
+    email: 1032998173@qq.com
+    url: https://whp-cloud.com/about.html
+  authorization:
+    name: whp OAuth
+    auth-regex: ^.*$
+    authorization-scope-list:
+      - scope: server
+        description: server all
+    token-url-list:
+      - http://whp-gateway:9999/auth/oauth/token
+
+## spring security 配置
+security:
+  oauth2:
+    client:
+      # 默认放行url,如果子模块重写这里的配置就会被覆盖
+      ignore-urls:
+        - '/actuator/**'
+        - '/v2/api-docs'
+    resource:
+      loadBalanced: true
+      token-info-uri: http://whp-auth/oauth/check_token

@@ -1,0 +1,13 @@
+spring:
+  # 安全配置
+  security:
+    user:
+      name: ENC(rZHA4LW5hHmhLAAzJoFNag==)     # whp-cloud
+      password: ENC(bjeyh+Aeii3kHXkoo00ZUw==) # whp-cloud
+  boot:
+    admin:
+      ui:
+        resource-locations: 'classpath:/ui/,classpath:/static/'
+        template-location: 'classpath:/ui/'
+        title: 'whp-cloud 服务状态监控'
+        brand: 'whp-cloud 服务状态监控'

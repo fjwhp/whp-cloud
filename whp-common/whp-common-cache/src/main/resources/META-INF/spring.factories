@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.cloud.whp.common.cache.RedisTemplateConfig,\
+    com.cloud.whp.common.cache.RedisCacheManagerConfig,\
+    com.cloud.whp.common.cache.RedisCacheAutoConfiguration
+
