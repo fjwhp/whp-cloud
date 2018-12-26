@@ -2,8 +2,8 @@
 security:
   oauth2:
     client:
-      client-id: ENC(ltJPpR50wT0oIY9kfOe1Iw==)
-      client-secret: ENC(ltJPpR50wT0oIY9kfOe1Iw==)
+      client-id: ENC(FSH6h6G+Xat6DQDw941a2abOm99Aqlz4)
+      client-secret: ENC(FSH6h6G+Xat6DQDw941a2abOm99Aqlz4)
       scope: server
       # 默认放行url,子模块重写时application-dev.yml中的公共配置会被覆盖,所以要把公共配置中的放行url再写一次
       ignore-urls:

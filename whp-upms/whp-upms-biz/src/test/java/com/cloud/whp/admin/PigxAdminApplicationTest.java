@@ -24,7 +24,7 @@ public class PigxAdminApplicationTest {
 		System.out.println(stringEncryptor.encrypt("whp-cloud"));
 
 		//解密方法
-		//System.out.println(stringEncryptor.decrypt("ltJPpR50wT0oIY9kfOe1Iw==="));
-		System.out.println(stringEncryptor.decrypt("L3jDmsoWe2v4hI5c3+41tQ8SpxOrWE0d"));
+		System.out.println(stringEncryptor.decrypt("ltJPpR50wT0oIY9kfOe1Iw==="));
+		System.out.println("==="+stringEncryptor.decrypt("FSH6h6G+Xat6DQDw941a2abOm99Aqlz4"));
 	}
 }
